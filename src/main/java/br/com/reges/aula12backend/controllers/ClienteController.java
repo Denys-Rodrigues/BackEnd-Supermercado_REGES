@@ -37,7 +37,7 @@ public class ClienteController {
     }
 
     @PostMapping("/clientes")
-    public int Post(Cliente pcli) throws SQLException {
+    public int Post(@RequestBody Cliente pcli) throws SQLException {
         
         ClienteRdn rdn = new ClienteRdn();
         return rdn.inserir(pcli);
