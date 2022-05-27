@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,7 +21,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RestController
 public class ClienteController {
     
-    @GetMapping("/clientes")
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/cliente")
     public List<Cliente>ObterTodos(){
 
         ClienteRdn rdn = new ClienteRdn();
@@ -28,7 +30,8 @@ public class ClienteController {
 
     }
 
-    @GetMapping("/clientes/{id}")
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/cliente/{id}")
     public Cliente GetById(@PathVariable("id") int id) {
 
         ClienteRdn rdn = new ClienteRdn();
@@ -36,7 +39,8 @@ public class ClienteController {
         
     }
 
-    @PostMapping("/clientes")
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PostMapping("/cliente")
     public int Post(@RequestBody Cliente pcli) throws SQLException {
         
         ClienteRdn rdn = new ClienteRdn();
@@ -44,7 +48,8 @@ public class ClienteController {
 
     }
     
-    @PutMapping("clientes/{id}")
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PutMapping("cliente/{id}")
     public int Put(@PathVariable(value="id") int id, @RequestBody Cliente pCliente){
 
         ClienteRdn rdn = new ClienteRdn();
@@ -58,7 +63,8 @@ public class ClienteController {
         }
     }
 
-    @DeleteMapping("clientes/{id}")
+    @CrossOrigin(origins = "http://localhost:4200")
+    @DeleteMapping("cliente/{id}")
     public int Delete(@PathVariable(value="id") int id){
 
         ClienteRdn rdn = new ClienteRdn();

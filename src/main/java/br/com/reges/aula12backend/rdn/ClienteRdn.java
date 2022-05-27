@@ -20,6 +20,7 @@ import java.util.Calendar;
  *
  * @author alex.lopes
  */
+
 public class ClienteRdn {
 
     public int inserir(Cliente cliente) throws SQLException {
@@ -195,21 +196,23 @@ public class ClienteRdn {
         int numeroLinhasAfetadas = 0;
 
         try {
-
-            String str = "delete from cliente";
+            String str = "delete from cliente where id_cliente = ?";
 
             //RECUPERAR A CONEXÃO 
             Connection conn = new ConnectionFactory().getConnection();
 
             //INSTANCIA O COMANDO
-            Statement statement = conn.createStatement();
+            PreparedStatement stmt = conn.prepareStatement(str.toString());
+
+            //CRIAÇÃO DE PARAMETROS
+            stmt.setInt(1, id);
             
             //EXECUTA O DELETE
-            numeroLinhasAfetadas = statement.executeUpdate(str);
+            numeroLinhasAfetadas = stmt.executeUpdate();
 
             //FECHA A CONEXÃO E O STATEMENT
             conn.close();
-            statement.close();
+            stmt.close();
 
         } catch (SQLException e) {
             System.out.println(e);
