@@ -17,7 +17,7 @@ public class Endereco {
 
     // CONSTRUTOR COMPLETO
     public Endereco(String pLogradouro, String pBairro, String pCep, String pCidade, String pComplemento,
-            String pNumero, String pUf) {
+        String pNumero, String pUf) {
         this.logradouro = pLogradouro;
         this.bairro = pBairro;
         this.cep = pCep;

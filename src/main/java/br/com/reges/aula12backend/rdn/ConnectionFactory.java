@@ -9,10 +9,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- *
- * @author alex.lopes
- */
 public class ConnectionFactory {
     
     private String URL = "jdbc:mysql://localhost:3306/db_supermercado_reges";    

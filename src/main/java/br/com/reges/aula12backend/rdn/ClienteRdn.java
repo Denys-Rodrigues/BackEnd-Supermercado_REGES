@@ -13,6 +13,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+// import java.text.DateFormat;
+// import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -31,7 +33,7 @@ public class ClienteRdn {
         sql.append("INSERT INTO cliente                               ");
         sql.append("            (nome                                 ");
         sql.append("            ,telefone                             ");
-        sql.append("            ,data_nascimento                      ");
+       // sql.append("            ,data_nascimento                      ");
         sql.append("            ,email                                ");
         sql.append("            ,numero_cartao_fidelidade             ");
         sql.append("            ,logradouro                           ");
@@ -44,7 +46,7 @@ public class ClienteRdn {
         sql.append("        VALUES                                    ");
         sql.append("              (?                                  ");
         sql.append("              ,?                                  ");
-        sql.append("              ,?                                  ");
+       // sql.append("              ,?                                  ");
         sql.append("              ,?                                  ");
         sql.append("              ,?                                  ");
         sql.append("              ,?                                  ");
@@ -61,17 +63,18 @@ public class ClienteRdn {
         stmt.setString(1, cliente.getNome());
         stmt.setString(2, cliente.getTelefone());
 
-        stmt.setDate(3, new java.sql.Date(cliente.getDataNascimento().getTimeInMillis()));
-        stmt.setString(4, cliente.getEmail());
-        stmt.setString(5, cliente.getNumeroCartaoFidelidade());
+       // stmt.setDate(3, new java.sql.Date(cliente.getDataNascimento().getTimeInMillis()));
+       
+        stmt.setString(3, cliente.getEmail());
+        stmt.setString(4, cliente.getNumeroCartaoFidelidade());
 
-        stmt.setString(6, cliente.getEndereco().getLogradouro());
-        stmt.setString(7, cliente.getEndereco().getBairro());
-        stmt.setString(8, cliente.getEndereco().getCep());
-        stmt.setString(9, cliente.getEndereco().getCidade());
-        stmt.setString(10, cliente.getEndereco().getComplemento());
-        stmt.setString(11, cliente.getEndereco().getNumero());
-        stmt.setString(12, cliente.getEndereco().getUf());
+        stmt.setString(5, cliente.getEndereco().getLogradouro());
+        stmt.setString(6, cliente.getEndereco().getBairro());
+        stmt.setString(7, cliente.getEndereco().getCep());
+        stmt.setString(8, cliente.getEndereco().getCidade());
+        stmt.setString(9, cliente.getEndereco().getComplemento());
+        stmt.setString(10, cliente.getEndereco().getNumero());
+        stmt.setString(11, cliente.getEndereco().getUf());
 
         linhasAfetadas = stmt.executeUpdate();
 
