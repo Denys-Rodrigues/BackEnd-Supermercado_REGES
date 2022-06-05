@@ -1,12 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.reges.aula12backend.rdn;
-
-import br.com.reges.aula12backend.modelos.Cliente;
-import br.com.reges.aula12backend.modelos.Endereco;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,10 +10,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-/**
- *
- * @author alex.lopes
- */
+import br.com.reges.aula12backend.modelos.Cliente;
+import br.com.reges.aula12backend.modelos.Endereco;
 
 public class ClienteRdn {
 
